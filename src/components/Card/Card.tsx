@@ -1,6 +1,9 @@
 import { MovieType } from "../../common/types";
 import { AiOutlineStar, AiFillStar } from "react-icons/ai";
 import { Link } from "react-router-dom";
+import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { addFavorite, removeFavorite } from "../../features/favMovieSlice";
+import { useState } from "react";
 
 export type MovieCardData = Omit<
   MovieType,
@@ -8,12 +11,32 @@ export type MovieCardData = Omit<
 >;
 
 const Card = (movieData: MovieCardData) => {
+  const { movies } = useAppSelector((state) => state.favorites);
+  const dispatch = useAppDispatch();
+  const [isFavorites, setIsFavorites] = useState<boolean>(() => {
+    const isFavoriteMovie = movies.find((movie) => movie.id === movieData.id);
+    return !!isFavoriteMovie;
+  });
+
+  const handleFavorites = () => {
+    if (isFavorites) {
+      dispatch(removeFavorite(movieData.id));
+      setIsFavorites((prevState) => !prevState);
+    } else {
+      dispatch(addFavorite(movieData));
+      setIsFavorites((prevState) => !prevState);
+    }
+  };
   return (
     <div className="col-md-4 col-sm-6">
       <div className="card card-block">
         <h4 className="icon-fav">
           <i>
-            <AiOutlineStar size={24} />
+            {isFavorites ? (
+              <AiFillStar size={24} onClick={handleFavorites} />
+            ) : (
+              <AiOutlineStar size={24} onClick={handleFavorites} />
+            )}
           </i>
         </h4>
         <img
