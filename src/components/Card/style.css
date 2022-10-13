@@ -1,0 +1,42 @@
+img {
+  height: 350px;
+  width: 100%;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+div [className="col-"] {
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.card {
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
+  cursor: pointer;
+  margin: 10px;
+}
+
+.icon-fav {
+  position: absolute;
+  top: 0.5rem;
+  left: 16.5rem;
+  display: inline-flex;
+  align-items: center;
+  height: 3rem;
+  width: 3rem;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  background-color: #000;
+  backdrop-filter: blur(80px);
+  cursor: pointer;
+}
