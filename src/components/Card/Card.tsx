@@ -20,7 +20,7 @@ const Card = (movieData: MovieCardData) => {
           src={`https://image.tmdb.org/t/p/w500${movieData.poster_path}`}
           alt={movieData.original_title}
         />
-        <Link to={`/movie/${movieData.id}`}>
+        <Link to={`/movie/${movieData.id}`} style={{ textDecoration: "none" }}>
           <h5 className="card-title mt-3 mb-3">{movieData.original_title}</h5>
         </Link>
       </div>

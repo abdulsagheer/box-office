@@ -10,7 +10,6 @@ const fetchPaginationMovies: PaginateFetch = async (page = 1) => {
   );
   return data.results;
 };
-
 const usePaginatedFetchMovies = (page: number) =>
   useQuery(["movies", page], () => fetchPaginationMovies(page), {
     keepPreviousData: true,

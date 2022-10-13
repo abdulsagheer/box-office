@@ -40,3 +40,91 @@ div [className="col-"] {
   backdrop-filter: blur(80px);
   cursor: pointer;
 }
+
+svg {
+  color: #ffa710;
+}
+
+.card-title {
+  font-size: 15px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  cursor: pointer;
+}
+
+.card-title i {
+  font-size: 15px;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  cursor: pointer;
+  color: #ffa710;
+}
+
+.card-title i:hover {
+  transform: scale(1.25) rotate(100deg);
+  -webkit-transform: scale(1.25) rotate(100deg);
+  -moz-transform: scale(1.25) rotate(100deg);
+  -ms-transform: scale(1.25) rotate(100deg);
+  -o-transform: scale(1.25) rotate(100deg);
+  color: #18d4ca;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  -webkit-transform: scale(1.05) rotate(100deg);
+  -moz-transform: scale(1.05) rotate(100deg);
+  -ms-transform: scale(1.05) rotate(100deg);
+  -o-transform: scale(1.05) rotate(100deg);
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.3);
+}
+
+.card-text {
+  height: 80px;
+}
+
+.card::before,
+.card::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: scale3d(1, 0, 1);
+  -webkit-transform: scale3d(1, 0, 1);
+  -moz-transform: scale3d(1, 0, 1);
+  -ms-transform: scale3d(1, 0, 1);
+  -o-transform: scale3d(1, 0, 1);
+  transition: transform 0.3s ease-out 0s;
+  -webkit-transition: transform 0.3s ease-out 0s;
+  -moz-transition: transform 0.3s ease-out 0s;
+  -ms-transition: transform 0.3s ease-out 0s;
+  -o-transition: transform 0.3s ease-out 0s;
+  background: rgba(255, 255, 255, 0.1);
+  content: "";
+  pointer-events: none;
+}
+
+.card::before {
+  transform-origin: left top;
+}
+
+.card::after {
+  transform-origin: right bottom;
+}
+
+.card:hover::before,
+.card:hover::after,
+.card:focus::before,
+.card:focus::after {
+  transform: scale3d(1, 1, 1);
+  -webkit-transform: scale3d(1, 1, 1);
+  -moz-transform: scale3d(1, 1, 1);
+  -ms-transform: scale3d(1, 1, 1);
+  -o-transform: scale3d(1, 1, 1);
+}
