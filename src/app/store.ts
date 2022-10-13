@@ -1,7 +1,8 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
+import favReducer from "../features/favMovieSlice";
 
 export const store = configureStore({
-  reducer: {},
+  reducer: { favorites: favReducer },
 });
 
 export type AppDispatch = typeof store.dispatch;
