@@ -11,12 +11,12 @@ function App() {
       <Header />
       <div>
         <Link to="/">Home</Link>
-        <Link to="/movies/:id">Movie</Link>
+        <Link to="/movie/:id">Movie</Link>
         <Link to="/favorites">Favorites</Link>
       </div>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/movies/:id" element={<Movie />} />
+        <Route path="/movie/:id" element={<Movie />} />
         <Route path="/favorites" element={<Favorites />} />
       </Routes>
     </div>

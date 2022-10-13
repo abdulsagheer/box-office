@@ -6,8 +6,6 @@ const Home = () => {
   const [page, setPage] = useState<number>(1);
   const { data: movies, isLoading } = usePaginatedFetchMovies(page);
   console.log("movies =>", movies);
-  console.log(process.env.REACT_APP_API_KEY);
-  console.log(process.env.REACT_APP_API);
 
   return (
     <>
@@ -19,6 +17,7 @@ const Home = () => {
             {movies?.map(
               ({ id, poster_path, original_title }: MovieCardData) => (
                 <Card
+                  key={id}
                   id={id}
                   poster_path={poster_path}
                   original_title={original_title}
