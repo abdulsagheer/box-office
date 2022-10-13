@@ -15,7 +15,7 @@ function App() {
       <h1>Box Office</h1>
       <div>
         <Link to="/">Home</Link>
-        <Link to="/movies">Movie</Link>
+        <Link to="/movies/:id">Movie</Link>
         <Link to="/favorites">Favorites</Link>
       </div>
     </div>
